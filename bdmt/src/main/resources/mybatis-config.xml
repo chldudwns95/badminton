@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!-- 
+typeAliases:별칭을 줌 //테이블 경로의 명칭을 지정
+mappers:?
+-->
+<configuration>
+	<typeAliases>
+	<typeAlias type = "com.bdmt.bdmt.model.User" alias ="User"/>
+		<!-- <typeAlias type="kr.ac.kopo.bookshop.model.Book" alias="Book"/> -->
+	</typeAliases>
+	<mappers>
+		<!-- <mapper resource="mybatis/book.xml"/> -->
+		<mapper resource = "mybatis/user.xml"/>
+	</mappers>
+</configuration>
