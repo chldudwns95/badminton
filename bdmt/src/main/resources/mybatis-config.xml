@@ -7,10 +7,16 @@ mappers:?
 <configuration>
 	<typeAliases>
 	<typeAlias type = "com.bdmt.bdmt.model.User" alias ="User"/>
+	<typeAlias type = "com.bdmt.bdmt.model.Game" alias = "Game"/>
+	<typeAlias type = "com.bdmt.bdmt.model.Team" alias = "Team"/>
+	
 		<!-- <typeAlias type="kr.ac.kopo.bookshop.model.Book" alias="Book"/> -->
 	</typeAliases>
 	<mappers>
-		<!-- <mapper resource="mybatis/book.xml"/> -->
 		<mapper resource = "mybatis/user.xml"/>
+		<mapper resource = "mybatis/game.xml"/>
+		<mapper resource = "mybatis/team.xml"/>
+		
+		<!-- <mapper resource="mybatis/book.xml"/> -->
 	</mappers>
 </configuration>

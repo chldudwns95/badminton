@@ -4,14 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>mainPage</title>
+<title>Insert title here</title>
 </head>
 <body>
 
-	<!-- 메뉴  -->
-	<a>회원가입</a>
-	<a>공지사항</a>
-	<a href = "/game/gameList">경기</a>
-	<a>팀</a>	
 </body>
 </html>
