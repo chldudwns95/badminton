@@ -9,7 +9,8 @@
 <body>
 
 	<!-- 메뉴  -->
-	<a>회원가입</a>
+	<a href = "/user/signup">회원가입</a>
+	<a href = "/user/myEdit">회원정보수정</a>
 	<a>공지사항</a>
 	<a href = "/game/gameList">경기</a>
 	<a>팀</a>	
