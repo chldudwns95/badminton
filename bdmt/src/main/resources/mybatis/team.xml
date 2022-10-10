@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace = "Team">
+	<select id = "teamList" resultType = "Team">
+		SELECT * 
+		FROM TEAM_MST A
+		INNER JOIN TEAM_DTL B
+		    ON A.TEAM_ID = B.TEAM_ID
+	</select>
+	
+	<insert id = "addTeam">
+		INSERT INTO TEAM_MST
+		(
+			 TEAM_ID
+			,GAME_ID
+			,USER_ID
+			,TEAM_NM
+			,TEAM_M_ID
+		)
+		VALUES
+		(
+			 #{TEAM_ID}
+			,#{GAME_ID}
+			,#{USER_ID}
+			,#{TEAM_NM}
+			,#{TEAM_M_ID}
+		)
+	</insert>
+	
+	<update id = "updateTeam">
+		UPDATE TEAM_MST
+		SET TEAM_NM = #{TEAM_NM}
+		WHERE TEAM_ID = #{TEAM_ID}
+	</update>
+	
+	<select id = "teamItem" resultType = "Team">
+		SELECT * 
+		FROM TEAM_MST 
+		WHERE TEAM_ID = #{TEAM_ID} 
+	</select>
+	
+	<delete id = "teamDelete">
+		DELETE TEAM_MST
+		WHERE TEAM_ID = #{TEAM_ID}
+	</delete>
+</mapper>

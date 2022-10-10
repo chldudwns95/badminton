@@ -1,8 +1,6 @@
 -- 사용자
 CREATE TABLE "USER" (
-	"USER_ID"  VARCHAR2(35) NOT NULL, -- 아이디
-	"TEAM_ID"  VARCHAR2(20) NOT NULL, -- 팀_아이디
-	"GAME_ID"  VARCHAR2(20) NOT NULL, -- 게임_아이디
+	"USER_ID"  VARCHAR2(35) NOT NULL, -- 사용자_아이디
 	"USER_NM"  VARCHAR2(5)  NULL,     -- 이름
 	"PASSWORD" VARCHAR2(20) NULL,     -- 비밀번호
 	"PHONE"    VARCHAR2(15) NULL,     -- 연락처
@@ -13,9 +11,7 @@ CREATE TABLE "USER" (
 -- 사용자 기본키
 CREATE UNIQUE INDEX "PK_USER"
 	ON "USER" ( -- 사용자
-		"USER_ID" ASC, -- 아이디
-		"TEAM_ID" ASC, -- 팀_아이디
-		"GAME_ID" ASC  -- 게임_아이디
+		"USER_ID" ASC -- 사용자_아이디
 	);
 
 -- 사용자
@@ -23,22 +19,14 @@ ALTER TABLE "USER"
 	ADD
 		CONSTRAINT "PK_USER" -- 사용자 기본키
 		PRIMARY KEY (
-			"USER_ID", -- 아이디
-			"TEAM_ID", -- 팀_아이디
-			"GAME_ID"  -- 게임_아이디
+			"USER_ID" -- 사용자_아이디
 		);
 
 -- 사용자
 COMMENT ON TABLE "USER" IS '사용자';
 
--- 아이디
-COMMENT ON COLUMN "USER"."USER_ID" IS '아이디';
-
--- 팀_아이디
-COMMENT ON COLUMN "USER"."TEAM_ID" IS '팀_아이디';
-
--- 게임_아이디
-COMMENT ON COLUMN "USER"."GAME_ID" IS '게임_아이디';
+-- 사용자_아이디
+COMMENT ON COLUMN "USER"."USER_ID" IS '사용자_아이디';
 
 -- 이름
 COMMENT ON COLUMN "USER"."USER_NM" IS '이름';
@@ -111,9 +99,7 @@ COMMENT ON CONSTRAINT "GAME"."PK_GAME" IS '게임 기본키';
 -- 게시판
 CREATE TABLE "BOARD" (
 	"BOARD_ID"      VARCHAR2(20)   NOT NULL, -- 게시판_번호
-	"USER_ID"       VARCHAR2(35)   NOT NULL, -- 아이디
-	"TEAM_ID"       VARCHAR2(20)   NOT NULL, -- 팀_아이디
-	"GAME_ID"       VARCHAR2(20)   NOT NULL, -- 게임_아이디
+	"USER_ID"       VARCHAR2(35)   NOT NULL, -- 사용자_아이디
 	"BOARD_CATE"    VARCHAR2(20)   NULL,     -- 게시판_분류번호
 	"BOARD_TITLE"   VARCHAR2(200)  NULL,     -- 게시판_제목
 	"BOARD_CONTENT" VARCHAR2(4000) NULL,     -- 게시판_내용
@@ -124,9 +110,7 @@ CREATE TABLE "BOARD" (
 CREATE UNIQUE INDEX "PK_BOARD"
 	ON "BOARD" ( -- 게시판
 		"BOARD_ID" ASC, -- 게시판_번호
-		"USER_ID"  ASC, -- 아이디
-		"TEAM_ID"  ASC, -- 팀_아이디
-		"GAME_ID"  ASC  -- 게임_아이디
+		"USER_ID"  ASC  -- 사용자_아이디
 	);
 
 -- 게시판
@@ -135,9 +119,7 @@ ALTER TABLE "BOARD"
 		CONSTRAINT "PK_BOARD" -- 게시판 기본키
 		PRIMARY KEY (
 			"BOARD_ID", -- 게시판_번호
-			"USER_ID",  -- 아이디
-			"TEAM_ID",  -- 팀_아이디
-			"GAME_ID"   -- 게임_아이디
+			"USER_ID"   -- 사용자_아이디
 		);
 
 -- 게시판
@@ -146,14 +128,8 @@ COMMENT ON TABLE "BOARD" IS '게시판';
 -- 게시판_번호
 COMMENT ON COLUMN "BOARD"."BOARD_ID" IS '게시판_번호';
 
--- 아이디
-COMMENT ON COLUMN "BOARD"."USER_ID" IS '아이디';
-
--- 팀_아이디
-COMMENT ON COLUMN "BOARD"."TEAM_ID" IS '팀_아이디';
-
--- 게임_아이디
-COMMENT ON COLUMN "BOARD"."GAME_ID" IS '게임_아이디';
+-- 사용자_아이디
+COMMENT ON COLUMN "BOARD"."USER_ID" IS '사용자_아이디';
 
 -- 게시판_분류번호
 COMMENT ON COLUMN "BOARD"."BOARD_CATE" IS '게시판_분류번호';
@@ -177,6 +153,7 @@ COMMENT ON CONSTRAINT "BOARD"."PK_BOARD" IS '게시판 기본키';
 CREATE TABLE "TEAM" (
 	"TEAM_ID"   VARCHAR2(20)  NOT NULL, -- 팀_아이디
 	"GAME_ID"   VARCHAR2(20)  NOT NULL, -- 게임_아이디
+	"USER_ID"   VARCHAR2(35)  NOT NULL, -- 사용자_아이디
 	"TEAM_NM"   VARCHAR2(100) NOT NULL, -- 팀_이름
 	"TEAM_M_ID" VARCHAR2(20)  NULL      -- 팀장_아이디
 );
@@ -185,7 +162,8 @@ CREATE TABLE "TEAM" (
 CREATE UNIQUE INDEX "PK_TEAM"
 	ON "TEAM" ( -- 팀
 		"TEAM_ID" ASC, -- 팀_아이디
-		"GAME_ID" ASC  -- 게임_아이디
+		"GAME_ID" ASC, -- 게임_아이디
+		"USER_ID" ASC  -- 사용자_아이디
 	);
 
 -- 팀
@@ -194,7 +172,8 @@ ALTER TABLE "TEAM"
 		CONSTRAINT "PK_TEAM" -- 팀 기본키
 		PRIMARY KEY (
 			"TEAM_ID", -- 팀_아이디
-			"GAME_ID"  -- 게임_아이디
+			"GAME_ID", -- 게임_아이디
+			"USER_ID"  -- 사용자_아이디
 		);
 
 -- 팀
@@ -205,6 +184,9 @@ COMMENT ON COLUMN "TEAM"."TEAM_ID" IS '팀_아이디';
 
 -- 게임_아이디
 COMMENT ON COLUMN "TEAM"."GAME_ID" IS '게임_아이디';
+
+-- 사용자_아이디
+COMMENT ON COLUMN "TEAM"."USER_ID" IS '사용자_아이디';
 
 -- 팀_이름
 COMMENT ON COLUMN "TEAM"."TEAM_NM" IS '팀_이름';
@@ -278,35 +260,58 @@ CREATE TABLE "TABLE2" (
 -- 새 테이블3
 COMMENT ON TABLE "TABLE2" IS '새 테이블3';
 
--- 사용자
-ALTER TABLE "USER"
+-- 소속팀_정보
+CREATE TABLE "TEAM_DTL" (
+	"TEAM_ID" VARCHAR2(20) NOT NULL, -- 팀_아이디
+	"GAME_ID" VARCHAR2(20) NOT NULL, -- 게임_아이디
+	"USER_ID" VARCHAR2(35) NOT NULL  -- 사용자_아이디
+);
+
+-- 소속팀_정보 기본키
+CREATE UNIQUE INDEX "PK_TEAM_DTL"
+	ON "TEAM_DTL" ( -- 소속팀_정보
+		"TEAM_ID" ASC, -- 팀_아이디
+		"GAME_ID" ASC, -- 게임_아이디
+		"USER_ID" ASC  -- 사용자_아이디
+	);
+
+-- 소속팀_정보
+ALTER TABLE "TEAM_DTL"
 	ADD
-		CONSTRAINT "FK_TEAM_TO_USER" -- 팀 -> 사용자
-		FOREIGN KEY (
+		CONSTRAINT "PK_TEAM_DTL" -- 소속팀_정보 기본키
+		PRIMARY KEY (
 			"TEAM_ID", -- 팀_아이디
-			"GAME_ID"  -- 게임_아이디
-		)
-		REFERENCES "TEAM" ( -- 팀
-			"TEAM_ID", -- 팀_아이디
-			"GAME_ID"  -- 게임_아이디
+			"GAME_ID", -- 게임_아이디
+			"USER_ID"  -- 사용자_아이디
 		);
 
--- 팀 -> 사용자
-COMMENT ON CONSTRAINT "USER"."FK_TEAM_TO_USER" IS '팀 -> 사용자';
+-- 소속팀_정보
+COMMENT ON TABLE "TEAM_DTL" IS '소속팀_정보';
+
+-- 팀_아이디
+COMMENT ON COLUMN "TEAM_DTL"."TEAM_ID" IS '팀_아이디';
+
+-- 게임_아이디
+COMMENT ON COLUMN "TEAM_DTL"."GAME_ID" IS '게임_아이디';
+
+-- 사용자_아이디
+COMMENT ON COLUMN "TEAM_DTL"."USER_ID" IS '사용자_아이디';
+
+-- 소속팀_정보 기본키
+COMMENT ON INDEX "PK_TEAM_DTL" IS '소속팀_정보 기본키';
+
+-- 소속팀_정보 기본키
+COMMENT ON CONSTRAINT "TEAM_DTL"."PK_TEAM_DTL" IS '소속팀_정보 기본키';
 
 -- 게시판
 ALTER TABLE "BOARD"
 	ADD
 		CONSTRAINT "FK_USER_TO_BOARD" -- 사용자 -> 게시판
 		FOREIGN KEY (
-			"USER_ID", -- 아이디
-			"TEAM_ID", -- 팀_아이디
-			"GAME_ID"  -- 게임_아이디
+			"USER_ID" -- 사용자_아이디
 		)
 		REFERENCES "USER" ( -- 사용자
-			"USER_ID", -- 아이디
-			"TEAM_ID", -- 팀_아이디
-			"GAME_ID"  -- 게임_아이디
+			"USER_ID" -- 사용자_아이디
 		);
 
 -- 사용자 -> 게시판
@@ -325,3 +330,35 @@ ALTER TABLE "TEAM"
 
 -- 게임 -> 팀
 COMMENT ON CONSTRAINT "TEAM"."FK_GAME_TO_TEAM" IS '게임 -> 팀';
+
+-- 팀
+ALTER TABLE "TEAM"
+	ADD
+		CONSTRAINT "FK_USER_TO_TEAM" -- 사용자 -> 팀
+		FOREIGN KEY (
+			"USER_ID" -- 사용자_아이디
+		)
+		REFERENCES "USER" ( -- 사용자
+			"USER_ID" -- 사용자_아이디
+		);
+
+-- 사용자 -> 팀
+COMMENT ON CONSTRAINT "TEAM"."FK_USER_TO_TEAM" IS '사용자 -> 팀';
+
+-- 소속팀_정보
+ALTER TABLE "TEAM_DTL"
+	ADD
+		CONSTRAINT "FK_TEAM_TO_TEAM_DTL" -- 팀 -> 소속팀_정보
+		FOREIGN KEY (
+			"TEAM_ID", -- 팀_아이디
+			"GAME_ID", -- 게임_아이디
+			"USER_ID"  -- 사용자_아이디
+		)
+		REFERENCES "TEAM" ( -- 팀
+			"TEAM_ID", -- 팀_아이디
+			"GAME_ID", -- 게임_아이디
+			"USER_ID"  -- 사용자_아이디
+		);
+
+-- 팀 -> 소속팀_정보
+COMMENT ON CONSTRAINT "TEAM_DTL"."FK_TEAM_TO_TEAM_DTL" IS '팀 -> 소속팀_정보';

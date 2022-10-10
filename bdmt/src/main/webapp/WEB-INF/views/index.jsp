@@ -7,12 +7,11 @@
 <title>mainPage</title>
 </head>
 <body>
-
 	<!-- 메뉴  -->
-	<a href = "/user/signup">회원가입</a>
+	<a href = "/user/signUp">회원가입</a>
 	<a href = "/user/myEdit">회원정보수정</a>
-	<a>공지사항</a>
+	<a href = "/intro/introList">공지사항</a>
 	<a href = "/game/gameList">경기</a>
-	<a>팀</a>	
+	<a href = "/team/teamList">팀</a>	
 </body>
 </html>

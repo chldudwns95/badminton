@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace = "Intro">
+
+	<select id ="introList" resultType = "Intro">
+		SELECT * 
+		FROM BOARD
+		WHERE BOARD_CATE = "intro"
+	</select>
+	
+	<insert id = "addIntro">
+		INSERT INTO BOARD
+		(
+			 BOARD_ID
+			,USER_ID
+			,BOARD_CATE
+			,BOARD_TITLE
+			,BOARD_CONTENT
+			,BOARD_DATE
+		)
+		VALUES
+		(
+			 #{BOARD_ID}
+			,#{USER_ID}
+			,'intro'
+			,#{BOARD_TITLE}
+			,#{BOARD_CONTENT}
+			,#{BOARD_DATE}
+		)
+	</insert>
+	
+	<select id = "introItem" resultType = "Intro">
+		SELECT * 
+		FROM BOARD
+		WHERE BOARD_ID = #BOARD_ID#
+	</select>
+	
+	<update id = "updateIntro">
+		UPDATE BOARD
+		SET  BOARD_TITLE = #{BOARD_TITLE}
+			,BOARD_CONTENT = #{BOARD_CONTENT}
+		WHERE BOARD_ID = #{BOARD_ID} 
+	</update>
+
+	<delete id = "deleteIntro">
+		DELETE BOARD
+		WHERE BOARD_ID = #{BOARD_ID}
+	</delete>
+</mapper>
