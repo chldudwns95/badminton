@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+a {text-decoration: none; color:black; }
+
+header {display : grid; grid-auto-flow : column; grid-template-column : 1fn; align-items: center;}
+
+h1 {display : inline-block; vertical-align : middle; color : black; margin : 0.5rem; padding : 0;}
+nav {display : inline-block; vertical-align : middle;}
+ul {list-style : none; margin : 0; padding 0; display : flex;}
+li.icon { flex-basis:25%;}
+a {display : block; text-align : center; margin : .25rem; padding : .5rem 1rem; text-decoration: none; foot-weight : bold; color : black; }
+
