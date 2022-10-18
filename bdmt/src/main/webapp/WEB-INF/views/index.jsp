@@ -5,13 +5,24 @@
 <head>
 <meta charset="UTF-8">
 <title>mainPage</title>
+<link href = "/css/index.css" rel = "stylesheet" type = "text/css"/>
 </head>
 <body>
-	<!-- 메뉴  -->
-	<a href = "/user/signUp">회원가입</a>
-	<a href = "/user/myEdit">회원정보수정</a>
-	<a href = "/intro/introList">공지사항</a>
-	<a href = "/game/gameList">경기</a>
-	<a href = "/team/teamList">팀</a>	
+	<header>
+		<a href = "/"> <img alt = "로고" src = "/image/logo.png"></a>
+		<nav>
+			<ul>
+				<!-- 메뉴  -->
+				<li><a href = "/intro/introList">공지사항</a></li>
+				<li><a href = "/user/signUp">회원가입</a></li>
+				<!-- <li><a href = "/user/myEdit">회원정보수정</a></li> -->
+				<li><a href = "/game/gameList">경기</a></li>
+				<li><a href = "/team/teamList">팀</a></li>
+				<li><a href = "/team/teamList">선수</a></li>
+			</ul>
+		</nav>
+	</header>
+	<a href = "/"><img src = "/image/mainImg1.png"></a>
+		
 </body>
 </html>
