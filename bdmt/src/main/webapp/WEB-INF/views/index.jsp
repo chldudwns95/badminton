@@ -28,7 +28,7 @@
 	<div class = "wrap">
 		<div class = "wrap-content">게시글바로가기</div>
 		<div class = "wrap-content">게시글바로가기</div>
-		<div class = "wrap-content">게시글바로가기</div>
+		<div class = "wrap-content">선수바로가기</div>
 		<div class = "wrap-content">게시글바로가기</div>
 	</div>
 	
