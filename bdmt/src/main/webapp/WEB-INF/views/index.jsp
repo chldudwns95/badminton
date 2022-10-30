@@ -22,7 +22,16 @@
 			</ul>
 		</nav>
 	</header>
-	<a href = "/"><img src = "/image/mainImg1.png"></a>
-		
+	<a class ="mainImg">
+		<img src = "./image/mainImg1.png">
+	</a>
+	<div class = "wrap">
+		<div class = "wrap-content">게시글바로가기</div>
+		<div class = "wrap-content">게시글바로가기</div>
+		<div class = "wrap-content">게시글바로가기</div>
+		<div class = "wrap-content">게시글바로가기</div>
+	</div>
+	
+	
 </body>
 </html>
