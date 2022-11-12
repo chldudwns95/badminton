@@ -18,7 +18,7 @@
 				<!-- <li><a href = "/user/myEdit">회원정보수정</a></li> -->
 				<li><a href = "/game/gameList">경기</a></li>
 				<li><a href = "/team/teamList">팀</a></li>
-				<li><a href = "/team/teamList">선수</a></li>
+				<li><a href = "/team/teamList">선수정보</a></li>
 			</ul>
 		</nav>
 	</header>
