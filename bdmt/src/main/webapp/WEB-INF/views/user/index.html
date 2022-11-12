@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- 웹페이지 보이지는 않지만, 필요한 설정을 해두는 곳이에요.
+             우리가 집을 위해 미리 생각 해놓은 것을 적어두는 곳이라고 할 수 있죠!-->
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!--    카카오톡 등 링크를 보냈을때 타이틀 사진 및 설정    og태그   -->
+        <meta property="og:title" content="르탄이 - 프로필 링크" />  
+        <meta property="og:description" content="어서와 코딩은 처음이지?" />
+        <meta property="og:image" content="공유할 이미지" />
+
+        <title>프로필 링크</title>
+        <style>
+            
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        * {    
+            font-family: "Pretendard",serif;
+        }
+
+            body{background-color: #44398A;}
+            .profile {
+                width: 100px; 
+                height: 100px; 
+                /* background-color : red;  */
+                border-radius: 100%; 
+                border: 2px solid white; 
+                background-image: url("ㅋㅋ.png");
+                background-position : center;
+                background-size : cover;            
+            }
+
+            .name{
+                color:white;
+                font-size : 20px;
+                margin-top : 30px; /* 위에서 띄움 */
+                margin-bottom: 10px; /* 아래서 띄움*/
+            }
+
+            .sub{
+                color : white;
+                font-size : 14px;
+                margin-top : 0;
+                margin-bottom : 30px;
+            }
+
+            .wrap{
+                /* background-color: red; */
+                /*가운데로 간다는건 양쪽여백을 싹 밀어버리는 것*/
+                /*줄이는것*/
+                width : 300px; /*사이즈를 줄이는것*/
+                margin : 30px auto 0 auto; /* 여백을 줄임, 위 -> 오 -> 아래 -> 왼(시계방향)  auto는 쫙밀음(센타)*/
+                /*박스 안에서 가운데 정렬(안의 내용물을 정렬)*/
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            /*style태그 안에서 .rap >a -> (class)wrap 안의 모든 a태그에 적용해*/
+            .wrap > a {
+                width : 300px;
+                height : 50px;
+                background-color: white;
+                border-radius: 8px; /* 둥글기 지정*/
+                margin-bottom: 10px; /*밑 간격 띄우기*/
+
+                font-size : 14px;
+                font-weight: bold;
+                color : #44398A;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-decoration: none;
+
+                box-shadow: 3px 3px 5px 0px black; /* 그림자 지정 */
+                /* 
+                    3px 3px 오른쪽밑으로 얼마나 질거냐
+                    5px 꼬릭의길이
+                    0px 선명도
+                */
+            }
+
+            .wrap > a:hover{
+                /* background-color: #d2d2d2; */
+                background-color : #f2f2f2;
+            }
+        </style>
+    </head>
+    <body>
+        <div class = "wrap">
+            <!--동그란이미지 구역에 배경이깔림-->
+            <div class="profile"></div>
+            <h1 class ="name">최영준</h1>
+            <!-- <p class = "sub">Life Like Choi's...</p> -->
+            <p class = "sub"> Ddung Ddung BBBo</p>
+            <a target="_blank" href="https://spartacodingclub.kr/">스파르타코딩클럽</a>
+            <a target="_blank" href="https://hanghae99.spartacodingclub.kr/">항해99</a>
+            <a target="_blank" href="https://chang.spartacodingclub.kr/">창업 부트캠프 창</a>
+            <a target="_blank" href="https://ddingdong.spartacodingclub.kr/">띵동코딩</a>
+        </div>
+    </body>
+</html>
