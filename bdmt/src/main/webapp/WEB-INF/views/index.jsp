@@ -15,7 +15,7 @@
 				<!-- 메뉴  -->
 				<li><a href = "/intro/introList">공지사항</a></li>
 				<li><a href = "/user/signUp">회원가입</a></li>
-				<!-- <li><a href = "/user/myEdit">회원정보수정</a></li> -->
+				<li><a href = "/user/myEdit">회원정보수정</a></li>
 				<li><a href = "/game/gameList">경기</a></li>
 				<li><a href = "/team/teamList">팀</a></li>
 				<li><a href = "/team/teamList">선수정보</a></li>
