@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace = "Intro">
+<mapper namespace = "Board">
 
-	<select id ="introList" resultType = "Intro">
+	<select id ="introList" resultType = "Board">
 		SELECT * 
 		FROM BOARD
-		WHERE BOARD_CATE = "intro"
+		WHERE BOARD_CATE = 'intro'
 	</select>
 	
 	<insert id = "addIntro">
@@ -30,7 +30,7 @@
 		)
 	</insert>
 	
-	<select id = "introItem" resultType = "Intro">
+	<select id = "introItem" resultType = "Board">
 		SELECT * 
 		FROM BOARD
 		WHERE BOARD_ID = #BOARD_ID#

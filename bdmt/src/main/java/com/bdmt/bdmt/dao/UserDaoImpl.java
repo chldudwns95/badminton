@@ -27,4 +27,9 @@ public class UserDaoImpl implements UserDao {
 		sql.update("User.myEdit", user);
 	}
 
+	@Override
+	public User login(User user) {
+		return sql.selectOne("User.login", user);
+	}
+
 }

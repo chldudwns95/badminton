@@ -16,26 +16,26 @@ public class IntroDaoImpl implements IntroDao {
 	
 	@Override
 	public List<Board> list() {
-		return sql.selectList("Intro.introList");
+		return sql.selectList("Board.introList");
 	}
 
 	@Override
 	public void add(Board board) {
-		sql.insert("Intro.addIntro", board);
+		sql.insert("Board.addIntro", board);
 	}
 
 	@Override
 	public Board introItem(String BOARD_ID) {
-		return sql.selectOne("Intro.introItem", BOARD_ID);
+		return sql.selectOne("Board.introItem", BOARD_ID);
 	}
 
 	@Override
 	public void update(Board board) {
-		sql.update("Intro.updateIntro", board);
+		sql.update("Board.updateIntro", board);
 	}
 
 	@Override
 	public void delete(String BOARD_ID) {
-		sql.delete("Intro.deleteIntro", BOARD_ID);
+		sql.delete("Board.deleteIntro", BOARD_ID);
 	}
 }

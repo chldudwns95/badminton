@@ -7,4 +7,5 @@ public interface UserService {
 	void signUp(User user);
 	User myEdit(String USER_ID);
 	void update(User user);
+	User login(User user);
 }

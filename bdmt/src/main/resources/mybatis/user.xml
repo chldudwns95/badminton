@@ -25,15 +25,22 @@
 
 	<update id = "myEdit">
 		UPDATE USER_MGT
-		SET  PASSWORD = #{PASSWORD}
-			,PHONE = #{PHONE}
-			,PHONE = #{DEPT_CD}
-		WHERE USER_ID = #{USER_ID}
+		   SET PASSWORD = #{PASSWORD}
+			  ,PHONE = #{PHONE}
+			  ,PHONE = #{DEPT_CD}
+		 WHERE USER_ID = #{USER_ID}
 	</update>
 	
 	<select id = "item" resultType = "User">
 		SELECT * 
-		FROM USER_MGT
-		WHERE USER_ID = #{USER_ID}
+		  FROM USER_MGT
+		 WHERE USER_ID = #{USER_ID}
+	</select>
+	
+	<select id = "login" resultType = "User">
+		SELECT * 
+		  FROM USER_MGT
+		 WHERE USER_ID = #{USER_ID} 
+		   AND PASSWORD = #{PASSWORD}
 	</select>
 </mapper>

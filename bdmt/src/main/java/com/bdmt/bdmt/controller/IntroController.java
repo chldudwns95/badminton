@@ -22,12 +22,12 @@ public class IntroController {
 	@Autowired
 	IntroService introSvc;
 	
-	@GetMapping("/IntroList")
+	@GetMapping("/introList")
 	String instoList(Model model) {
 		List<Board> introList = introSvc.introList();
 		model.addAttribute("list", introList);
 		
-		return path + "intoList";
+		return path + "introList";
 	}
 
 	@GetMapping("/introAdd")

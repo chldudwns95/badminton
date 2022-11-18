@@ -21,7 +21,7 @@ public class TeamController {
 	@Autowired
 	TeamService teamSvc;
 	
-	@GetMapping("/temaList")
+	@GetMapping("/teamList")
 		String list(Model model) {
 		List<Team> teamList = teamSvc.list();
 		model.addAttribute("teamList", teamList);

@@ -12,7 +12,7 @@ mappers:?
 	<typeAliases>
 		<typeAlias type = "com.bdmt.bdmt.model.User" alias = "User"/>
 		<typeAlias type = "com.bdmt.bdmt.model.Team" alias = "Team"/>
-		<typeAlias type = "com.bdmt.bdmt.model.Board" alias = "Intro"/>
+		<typeAlias type = "com.bdmt.bdmt.model.Board" alias = "Board"/>
 		<typeAlias type = "com.bdmt.bdmt.model.Game" alias = "Game"/>
 		<!-- <typeAlias type="kr.ac.kopo.bookshop.model.Book" alias="Book"/> -->
 	</typeAliases>
