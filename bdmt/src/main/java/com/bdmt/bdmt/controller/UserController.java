@@ -31,7 +31,7 @@ public class UserController {
 		
 		return "redirect:/";
 	}
-	
+
 	@GetMapping("/{USER_ID}/myEdit")
 	public String myEdit(@PathVariable String USER_ID, Model model) {
 		User user = userSvc.myEdit(USER_ID);
@@ -39,7 +39,7 @@ public class UserController {
 		model.addAttribute("myEdit", user);
 		return path + "update";
 	}
-	
+
 	@PostMapping("/{USER_ID}/myEdit")
 	String myEdit(@PathVariable String USER_ID, User user) {
 		user.setUSER_ID(USER_ID);

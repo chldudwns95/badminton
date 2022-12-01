@@ -34,11 +34,11 @@ public class GameController {
 		return path + "gameAdd";
 	}
 	
-	@PostMapping("/{GAME_ID}/gameAdd")
+	@PostMapping("/gameAdd")
 	String add(Game game) {
 		gameSvc.add(game);
 		
-		return path + "redirect:gameAdd";
+		return "redirect:/";
 	}
 	
 	@GetMapping("/{GAME_ID}/gameUpdate")

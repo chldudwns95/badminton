@@ -18,7 +18,10 @@
 		)
 		VALUES
 		(
-			 #{GAME_ID}
+			(
+				SELECT 'GAME_0' || MAX(NVL(SUBSTR(GAME_ID, 6,1), 0) +1) AS GAME_ID
+				FROM GAME
+			)
 			,#{GAME_NM}
 			,#{GAME_OPEN}
 			,#{GAME_START_DT}
@@ -28,11 +31,11 @@
 	
 	<update id = "updateGame">
 		UPDATE GAME
-		SET  GAME_NM = #{GAME_NM}
-			,GAME_OPEN = #{GAME_OPEN}
-			,GAME_START_DT = #{GAME_START_DT}
-			,GAME_END_DT = #{GAME_END_DT}
-		WHERE GAME_ID = #{GAME_ID}			
+		   SET GAME_NM = #{GAME_NM}
+			  ,GAME_OPEN = #{GAME_OPEN}
+			  ,GAME_START_DT = #{GAME_START_DT}
+			  ,GAME_END_DT = #{GAME_END_DT}
+		 WHERE GAME_ID = #{GAME_ID}			
 	</update>
 	
 	<delete id = "deleteGame">

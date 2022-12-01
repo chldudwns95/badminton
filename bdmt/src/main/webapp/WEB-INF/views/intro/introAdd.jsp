@@ -4,9 +4,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>팀</title>
+<title>공지사항 등록</title>
 </head>
 <body>
-	<jsp:include page="../menu.jsp"></jsp:include>
+	<div>
+		<div>
+			<form>
+				
+			</form>
+		</div>
+	</div>
 </body>
 </html>

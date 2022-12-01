@@ -5,15 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title>환영합니다!</title>
+<link href = "/css/login.css" rel = "stylesheet" type = "text/css"/>
 </head>
-<style>
-    
-    .logo{text-align: center;}
-    .F-wrap{display: flex; justify-content: center;}
-    .wrap{width : 50%; display:flex; flex-direction: column; justify-content: center; align-items: center; border: 2px solid #ddd; }
-    
-</style>
 <body>
+	<jsp:include page="menu.jsp"></jsp:include>
     <div class= "logo">
         <a href = "#"><img src="/logo.png" alt=""></a>
     </div>
